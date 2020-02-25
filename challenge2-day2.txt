@@ -1,0 +1,18 @@
+az login
+az aks create --resource-group teamResources --name openHackTeam11AKSCluster --node-count 1 --enable-addons monitoring --generate-ssh-keys
+az aks install-cli
+
+az aks get-credentials --resource-group teamResources --name openHackTeam11AKSCluster
+kubectl get nodes
+
+-- Configure ACR integration for existing AKS clusters
+az aks update -n openHackTeam11AKSCluster -g teamResources --attach-acr openhackteam11
+
+-- deploy
+kubectl apply -f challenge2-day2.yaml
+
+- watch creation
+kubectl get service poi-hacker1 --watch
+
+
+-- modify the yaml file to deploy other apps and repeat the above steps
