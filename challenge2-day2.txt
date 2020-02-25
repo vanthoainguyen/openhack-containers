@@ -2,6 +2,7 @@ az login
 az aks create --resource-group teamResources --name openHackTeam11AKSCluster --node-count 1 --enable-addons monitoring --generate-ssh-keys
 az aks install-cli
 
+-- configure azure credential for kubectl
 az aks get-credentials --resource-group teamResources --name openHackTeam11AKSCluster
 kubectl get nodes
 
@@ -23,3 +24,5 @@ kubectl get service poi-hacker1 --watch
 http://20.193.20.8/api/poi
 http://20.40.187.54/api/trips
 http://20.40.124.34/api/user
+http://20.40.185.157/api/user-java/healthcheck
+http://20.40.191.79/trip

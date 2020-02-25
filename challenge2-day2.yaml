@@ -193,3 +193,50 @@ spec:
   - port: 80
   selector:
     app: user-java-hacker1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tripviewer-hacker1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tripviewer-hacker1
+  template:
+    metadata:
+      labels:
+        app: tripviewer-hacker1
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: tripviewer-hacker1
+        image: openhackteam11.azurecr.io/tripviewer-hacker1:v1
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 80
+        env:
+        - name: TRIPS_API_ENDPOINT
+          value: "http://20.40.187.54"
+        - name: USERPROFILE_API_ENDPOINT
+          value: "http://20.40.124.34"
+        - name: BING_MAPS_KEY
+          value: "Avu0b7Lu6OsyGIcNHPJvoU1P1FIG64lch3ckxWNNzbOzZcah2CFppF5JNZ5eNtsC"                        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tripviewer-hacker1
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: tripviewer-hacker1    
