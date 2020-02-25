@@ -16,3 +16,10 @@ kubectl get service poi-hacker1 --watch
 
 
 -- modify the yaml file to deploy other apps and repeat the above steps
+-- useful cmd
+-- kubctl delete deployment
+-- kubctl delete svc
+
+http://20.193.20.8/api/poi
+http://20.40.187.54/api/trips
+http://20.40.124.34/api/user
