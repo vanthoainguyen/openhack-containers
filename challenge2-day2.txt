@@ -7,7 +7,7 @@ az aks get-credentials --resource-group teamResources --name openHackTeam11AKSCl
 kubectl get nodes
 
 -- Configure ACR integration for existing AKS clusters
-az aks update -n openHackTeam11AKSCluster -g teamResources --attach-acr openhackteam11
+az aks update -n openHackTeam11AKSCluster -g teamResources --attach-acr registryrnr1073
 
 -- deploy
 kubectl apply -f challenge2-day2.yaml
@@ -18,11 +18,14 @@ kubectl get service poi-hacker1 --watch
 
 -- modify the yaml file to deploy other apps and repeat the above steps
 -- useful cmd
--- kubctl delete deployment
--- kubctl delete svc
+-- kubctl delete deployment trips
+-- kubctl delete svc trips
 
 http://20.193.20.8/api/poi
 http://20.40.187.54/api/trips
 http://20.40.124.34/api/user
 http://20.40.185.157/api/user-java/healthcheck
 http://20.40.191.79/trip
+
+
+kubctl get service
