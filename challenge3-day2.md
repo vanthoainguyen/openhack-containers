@@ -99,6 +99,11 @@ az ad signed-in-user show --query userPrincipalName -o tsv
 
 Create a YAML manifest named basic-azure-ad-binding.yaml and paste the following contents. On the last line, replace userPrincipalName_or_objectId with the UPN or object ID output from the previous command:
 
+There are 2 different RBAC, make yourself an admin using this binding is different to the Admin in IAM in Azure portal
+This yaml allow you to do everything INSIDE the cluster like pods, etc not the Azure Portal
+
+Example: allow developer to create name space, pods but can't delete the Cluster resource
+
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding

@@ -13,7 +13,7 @@ az aks update -n openHackTeam11AKSCluster -g teamResources --attach-acr registry
 kubectl apply -f challenge2-day2.yaml
 
 - watch creation
-kubectl get service poi-hacker1 --watch
+kubectl get service poi --watch
 
 
 -- modify the yaml file to deploy other apps and repeat the above steps

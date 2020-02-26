@@ -1,6 +1,0 @@
-remember update helm repo before doing anything
-
-1/ https://docs.microsoft.com/en-us/azure/aks/kubernetes-helm#create-a-service-account
-2/ KeyVault Check flex volumn
-3/ NginX controoler
-
