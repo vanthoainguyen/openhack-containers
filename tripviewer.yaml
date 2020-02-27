@@ -30,9 +30,9 @@ spec:
         - containerPort: 80
         env:
         - name: TRIPS_API_ENDPOINT
-          value: "http://10.2.1.72"
+          value: "http://10.2.1.48"
         - name: USERPROFILE_API_ENDPOINT
-          value: "http://10.2.1.31"
+          value: "http://10.2.1.17"
         - name: BING_MAPS_KEY
           value: "Avu0b7Lu6OsyGIcNHPJvoU1P1FIG64lch3ckxWNNzbOzZcah2CFppF5JNZ5eNtsC"
 ---
